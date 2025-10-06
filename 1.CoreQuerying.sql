@@ -50,4 +50,41 @@ WHERE salary BETWEEN 55000 AND 85000;
 SELECT name, salary 
 FROM employees
 WHERE dept_id IS NULL;
+
+SELECT name 
+FROM employees
+ORDER BY name ASC;
+
+SELECT name, salary 
+FROM employees
+ORDER BY salary DESC;
+
+SELECT TOP 2 name, salary 
+FROM employees
+ORDER BY salary DESC;
+
+SELECT name, dept_id 
+FROM employees
+ORDER BY dept_id ASC, name DESC;
+
+SELECT name, salary 
+FROM employees
+ORDER BY salary DESC
+LIMIT 1 OFFSET 2;
+
+SELECT COUNT(*) AS total_employees
+FROM employees; 
+
+SELECT ROUND(AVG(salary), 2) as avg_salary
+FROM employees; 
+
+SELECT MAX(salary), MIN(salary) 
+FROM employees
+LIMIT 1;
     
+SELECT SUM(salary) 
+FROM employees
+WHERE dept_id IN (101, 102);
+
+SELECT COUNT(DISTINCT dept_id)
+FROM employees;
